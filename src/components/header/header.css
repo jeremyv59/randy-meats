@@ -3,6 +3,14 @@
   background-color: white;
 }
 
-.logo_container {
-  background-color: white;
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  max-width: 58px;
+  border-radius: 50rem;
+  margin: 0.5rem 0rem;
 }
