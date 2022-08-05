@@ -5,12 +5,23 @@
 
 .header_container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+}
+
+.logo_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .logo {
   max-width: 58px;
   border-radius: 50rem;
   margin: 0.5rem 0rem;
+}
+
+.item_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
