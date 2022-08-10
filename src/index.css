@@ -11,8 +11,9 @@
 }
 
 :root {
-  --color-primary: #ff7b47;
-  --color-secondary: #484538;
+  --color-primary: #f4fec1;
+  --color-secondary: #bb999c;
+  --color-bg: #a4def9;
   --color-white: #fff;
 
   --transition: all 400ms ease;
@@ -32,7 +33,7 @@ html {
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  background: var(--color-primary);
+  background: var(--color-bg);
   line-height: 1.7;
 }
 
