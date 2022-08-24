@@ -5,6 +5,7 @@
   color: var(--color-secondary);
   background-color: var(--color-primary);
   border-radius: 25rem;
+  font-size: 0.8rem;
 }
 
 .picker_container {

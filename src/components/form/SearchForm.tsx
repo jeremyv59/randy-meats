@@ -37,14 +37,6 @@ const SearchForm: React.FC = () => {
         </Form.Item>
       </div>
     </Form>
-
-    // <Form>
-    //   <Form.Group className="mt-6">
-    //     <Form.Label className="text-light">
-    //       Rechercher une recette ou un ingrédient
-    //     </Form.Label>
-    //   </Form.Group>
-    // </Form>
   );
 };
 
