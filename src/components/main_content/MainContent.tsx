@@ -9,7 +9,10 @@ const MainContent = () => {
         Bienvenue sur RandyMeats, ici vous pourrez créer des menus en fonction
         de vos envies et les enregistrer afin de pouvoir les avoir sous la main
       </h2>
-      <SearchForm></SearchForm>
+      <div>
+        <SearchForm></SearchForm>
+      </div>
+
       {/* <Form>
         <Form.Group>
           <Form.Label></Form.Label>

@@ -1,0 +1,37 @@
+.search_input {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.8rem 0rem 0.8rem 0.8rem;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  border-radius: 25rem;
+}
+
+.picker_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+}
+
+.container_selector {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_label {
+  color: var(--color-secondary);
+}
+
+.input_number {
+  background-color: var(--color-primary);
+  padding: 0.8rem 0rem 0.8rem 0.8rem;
+  border-radius: 25rem;
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+}
