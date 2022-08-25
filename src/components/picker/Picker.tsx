@@ -28,25 +28,30 @@ const customStyles: StylesConfig<
   menu: (provided: CSSObjectWithLabel) => ({
     ...provided,
     width: "100%",
-    color: "red",
+    height: 38,
+    color: "#bb999c",
   }),
   control: (provided, state) => ({
     ...provided,
     maxHeight: 36,
-    color: "#284b63",
-    border: "1px solid #284b63",
-    borderRadius: "0.5rem",
-    marginTop: "0.2rem",
-    boxShadow: state.isFocused ? "#284b63" : "none",
+    color: "#bb999c",
+    backgroundColor: "#f4fec1",
+    borderRadius: "25rem",
+    marginTop: "0.1rem",
+    boxShadow: "#bb999c",
+    border: "1px solid #bb999c",
     "&:hover": {
-      border: "1px solid #284b63",
-      boxShadow: "0px 0px 3px #284b63",
+      boxShadow: "0px 0px 3px #bb999c",
     },
   }),
-  option: (provided) => ({
+  option: (provided, state) => ({
     ...provided,
-    backgroundColor: "lightgray",
-    color: "#284b63",
+    backgroundColor: "#f4fec1",
+    color: "#bb999c",
+  }),
+  singleValue: (provided) => ({
+    ...provided,
+    color: "#bb999c",
   }),
 };
 
