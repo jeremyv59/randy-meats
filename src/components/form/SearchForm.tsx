@@ -1,8 +1,24 @@
 import { Form, Input } from "antd";
-import React from "react";
+import React, { useState } from "react";
+import Picker, { MyOptionType } from "../picker/Picker";
 import "./search_form.css";
 
+const options: MyOptionType[] = [
+  { value: "Très facile", label: "Très facile" },
+  { value: "facile", label: "facile" },
+  { value: "Difficile", label: "difficile" },
+  { value: "Très facile", label: "Très facile" },
+];
+
 const SearchForm: React.FC = () => {
+  const [selectedDifficulty, setSelectedDifficulty] = useState<MyOptionType>(
+    options[0]
+  );
+
+  const onChangeSelectedDifficulty = (difficulty: MyOptionType) => {
+    setSelectedDifficulty(difficulty);
+  };
+
   return (
     <Form>
       <Form.Item>
@@ -24,15 +40,14 @@ const SearchForm: React.FC = () => {
             ></Input>
           </div>
         </Form.Item>
-        <Form.Item rules={[{ type: "number", min: 1, max: 25 }]}>
+        <Form.Item>
           <div className="container_selector">
-            <label className="input_label">Difficulté</label>
-            <Input
-              className="input_number"
-              min="1"
-              max="25"
-              type="number"
-            ></Input>
+            <Picker
+              labelName="Difficulté"
+              value={selectedDifficulty}
+              options={options}
+              onChange={onChangeSelectedDifficulty}
+            ></Picker>
           </div>
         </Form.Item>
       </div>

@@ -1,32 +1,39 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 import "./picker.css";
 import Select, {
-  ControlProps,
   CSSObjectWithLabel,
-  MenuProps,
-  OptionProps,
+  GroupBase,
   StylesConfig,
 } from "react-select";
 
-type MyOptionType = {
+export type MyOptionType = {
   label: string;
   value: string;
 };
 
-const options: MyOptionType[] = [
-  { value: "Très facile", label: "Très facile" },
-  { value: "facile", label: "facile" },
-  { value: "Difficile", label: "difficile" },
-  { value: "Très facile", label: "Très facile" },
-];
+export interface ISelectProps {
+  labelName?: string;
+  options: MyOptionType[];
+  value: MyOptionType;
+  onChange?: any;
+  //   fieldName?: string ;
+  //   defaultValue: string;
+  //   setValue: React.SetStateAction<string>;
+}
 
-const customStyles = {
-  menu: (provided: CSSObjectWithLabel, state: ControlProps) => ({
+export type IsMulti = false;
+
+const customStyles: StylesConfig<
+  MyOptionType,
+  IsMulti,
+  GroupBase<MyOptionType>
+> = {
+  menu: (provided: CSSObjectWithLabel) => ({
     ...provided,
     width: "100%",
     color: "red",
   }),
-  control: (provided: CSSObjectWithLabel, state: ControlProps) => ({
+  control: (provided, state) => ({
     ...provided,
     maxHeight: 36,
     color: "#284b63",
@@ -39,15 +46,35 @@ const customStyles = {
       boxShadow: "0px 0px 3px #284b63",
     },
   }),
-  option: (provided: CSSObjectWithLabel, state: ControlProps) => ({
+  option: (provided) => ({
     ...provided,
-    backgroundColor: state.isFocused && "lightgray",
+    backgroundColor: "lightgray",
     color: "#284b63",
   }),
 };
 
-const Picker = () => {
-  return <div>Picker</div>;
+const Picker: React.FC<ISelectProps> = ({
+  labelName,
+  options,
+  value,
+  onChange,
+}) => {
+  return (
+    <React.Fragment>
+      <label className="label_name">{labelName}</label>
+      <Select
+        styles={customStyles}
+        isSearchable={false}
+        value={value}
+        onChange={onChange}
+        // defaultValue={defaultValue}
+        // onChange={(e : any) =>
+        //   setValue({ ...value, [fieldName]: e.value as string })
+        // }
+        options={options}
+      ></Select>
+    </React.Fragment>
+  );
 };
 
 export default Picker;
