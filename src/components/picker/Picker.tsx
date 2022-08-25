@@ -48,10 +48,13 @@ const customStyles: StylesConfig<
     ...provided,
     backgroundColor: "#f4fec1",
     color: "#bb999c",
+    fontSize: "0.8rem",
+    fontFamily: "Quicksand",
   }),
   singleValue: (provided) => ({
     ...provided,
     color: "#bb999c",
+    fontSize: "0.8rem",
   }),
 };
 

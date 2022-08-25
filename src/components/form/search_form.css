@@ -6,6 +6,7 @@
   background-color: var(--color-primary);
   border-radius: 25rem;
   font-size: 0.8rem;
+  font-family: "Quicksand";
 }
 
 .picker_container {
@@ -30,6 +31,7 @@
   border-radius: 25rem;
   font-size: 0.8rem;
   color: var(--color-secondary);
+  font-family: "Quicksand";
 }
 
 input[type="number"]::-webkit-inner-spin-button {
