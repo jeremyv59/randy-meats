@@ -14,7 +14,7 @@ export type MyOptionType = {
 export interface ISelectProps {
   labelName?: string;
   options: MyOptionType[];
-  value: MyOptionType;
+  value: MyOptionType | MyOptionType[];
   onChange?: any;
   //   fieldName?: string ;
   //   defaultValue: string;

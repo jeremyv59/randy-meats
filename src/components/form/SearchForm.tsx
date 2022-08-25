@@ -11,11 +11,13 @@ const options: MyOptionType[] = [
 ];
 
 const SearchForm: React.FC = () => {
-  const [selectedDifficulty, setSelectedDifficulty] = useState<MyOptionType>(
-    options[0]
-  );
+  const [selectedDifficulty, setSelectedDifficulty] = useState<
+    MyOptionType | MyOptionType[]
+  >(options[0]);
 
-  const onChangeSelectedDifficulty = (difficulty: MyOptionType) => {
+  const onChangeSelectedDifficulty = (
+    difficulty: MyOptionType | MyOptionType[]
+  ) => {
     setSelectedDifficulty(difficulty);
   };
 
