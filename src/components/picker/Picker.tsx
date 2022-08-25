@@ -28,16 +28,14 @@ const customStyles: StylesConfig<
   menu: (provided: CSSObjectWithLabel) => ({
     ...provided,
     width: "100%",
-    height: 38,
     color: "#bb999c",
   }),
   control: (provided, state) => ({
     ...provided,
-    maxHeight: 36,
+    height: "42px",
     color: "#bb999c",
     backgroundColor: "#f4fec1",
     borderRadius: "25rem",
-    marginTop: "0.1rem",
     boxShadow: "#bb999c",
     border: "1px solid #bb999c",
     "&:hover": {
