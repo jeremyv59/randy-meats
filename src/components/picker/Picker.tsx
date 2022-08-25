@@ -16,9 +16,6 @@ export interface ISelectProps {
   options: MyOptionType[];
   value: MyOptionType | MyOptionType[];
   onChange?: any;
-  //   fieldName?: string ;
-  //   defaultValue: string;
-  //   setValue: React.SetStateAction<string>;
 }
 
 export type IsMulti = false;
@@ -67,10 +64,6 @@ const Picker: React.FC<ISelectProps> = ({
         isSearchable={false}
         value={value}
         onChange={onChange}
-        // defaultValue={defaultValue}
-        // onChange={(e : any) =>
-        //   setValue({ ...value, [fieldName]: e.value as string })
-        // }
         options={options}
       ></Select>
     </React.Fragment>
