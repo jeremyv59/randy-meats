@@ -1,8 +1,17 @@
-import React from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import SearchForm from "../form/SearchForm";
+import RecipesList from "../list/RecipesList";
 import "./main_content.css";
 
 const MainContent = () => {
+  const [recipesData, setRecipesData] = useState<ReactNode>();
+
+  useEffect(() => {
+    fetch("/api")
+      .then((response) => response.json())
+      .then((data) => console.log("data", data));
+  }, []);
+
   return (
     <div className="container">
       <h2 className="main_title">
@@ -12,6 +21,8 @@ const MainContent = () => {
       <div>
         <SearchForm></SearchForm>
       </div>
+
+      <RecipesList data={recipesData}></RecipesList>
 
       {/* <Form>
         <Form.Group>
