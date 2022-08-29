@@ -5,6 +5,7 @@
   color: var(--color-secondary);
   background-color: var(--color-primary);
   border-radius: 25rem;
+  border: 1px solid #bb999c;
   font-size: 0.8rem;
   font-family: "Quicksand";
 }
@@ -28,6 +29,7 @@
 .input_number {
   background-color: var(--color-primary);
   padding: 0.8rem 0rem 0.8rem 0.8rem;
+  border: 1px solid #bb999c;
   border-radius: 25rem;
   font-size: 0.8rem;
   color: var(--color-secondary);
