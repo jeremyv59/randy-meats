@@ -1,15 +1,16 @@
+import { AxiosResponse } from "axios";
 import React, { ReactNode, useEffect, useState } from "react";
+import { GetFewRecipes } from "../../data/GetRecipes";
 import SearchForm from "../form/SearchForm";
 import RecipesList from "../list/RecipesList";
 import "./main_content.css";
 
 const MainContent = () => {
-  const [recipesData, setRecipesData] = useState<ReactNode>();
+  const [recipesData, setRecipesData] = useState<any>();
 
   useEffect(() => {
-    fetch("/api")
-      .then((response) => response.json())
-      .then((data) => console.log("data", data));
+    let result: Promise<AxiosResponse<any, any> | undefined> = GetFewRecipes();
+    setRecipesData(result);
   }, []);
 
   return (
