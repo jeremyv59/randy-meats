@@ -1,16 +1,24 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
+import { getFewRecipes } from "../../data/GetRecipes";
 import "./recipes_list.css";
 
-type RecipesListProps = {
-  data: ReactNode;
-};
+const RecipesList: React.FC = () => {
+  const [recipesData, setRecipesData] = useState<any>();
 
-const RecipesList: React.FC<RecipesListProps> = ({ data }) => {
-  console.log("data", data);
+  useEffect(() => {
+    getFewRecipes().then((res) => setRecipesData(res));
+  }, []);
+
   return (
     <div>
-      <p>Data</p>
-      {/* {(typeof data === "undefined") ? (<p>Loading...</p>) : } */}
+      {typeof recipesData === "undefined" ? (
+        <p>Loading...</p>
+      ) : (
+        recipesData.data.recipes.map((recipe: any, index: number) => {
+          // <p key={index}>{recipe.name}</p>;
+          console.log("rec", recipe.name);
+        })
+      )}
     </div>
   );
 };

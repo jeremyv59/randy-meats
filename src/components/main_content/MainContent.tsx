@@ -1,18 +1,11 @@
 import { AxiosResponse } from "axios";
 import React, { ReactNode, useEffect, useState } from "react";
-import { GetFewRecipes } from "../../data/GetRecipes";
+import { getFewRecipes } from "../../data/GetRecipes";
 import SearchForm from "../form/SearchForm";
 import RecipesList from "../list/RecipesList";
 import "./main_content.css";
 
 const MainContent = () => {
-  const [recipesData, setRecipesData] = useState<any>();
-
-  useEffect(() => {
-    let result: Promise<AxiosResponse<any, any> | undefined> = GetFewRecipes();
-    setRecipesData(result);
-  }, []);
-
   return (
     <div className="container">
       <h2 className="main_title">
@@ -23,7 +16,7 @@ const MainContent = () => {
         <SearchForm></SearchForm>
       </div>
 
-      <RecipesList data={recipesData}></RecipesList>
+      <RecipesList></RecipesList>
 
       {/* <Form>
         <Form.Group>
