@@ -1,25 +1,33 @@
-import React, { ReactNode, useEffect, useState } from "react";
-import { getFewRecipes } from "../../data/GetRecipes";
+import axios from "axios";
+import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import "./recipes_list.css";
 
-const RecipesList: React.FC = () => {
+const RecipesList = () => {
   const [recipesData, setRecipesData] = useState<any>();
 
-  useEffect(() => {
-    getFewRecipes().then((res) => setRecipesData(res));
+  const fetchData = useCallback(async () => {
+    const data = await axios("http://localhost:5000/api");
+
+    setRecipesData(data);
   }, []);
 
+  // the useEffect is only there to call `fetchData` at the right time
+  useEffect(() => {
+    fetchData()
+      // make sure to catch any error
+      .catch(console.error);
+  }, [fetchData]);
+
   return (
-    <div>
-      {typeof recipesData === "undefined" ? (
+    <React.Fragment>
+      {!recipesData ? (
         <p>Loading...</p>
       ) : (
         recipesData.data.recipes.map((recipe: any, index: number) => {
-          // <p key={index}>{recipe.name}</p>;
-          console.log("rec", recipe.name);
+          return <p key={index}>{recipe.name}</p>;
         })
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

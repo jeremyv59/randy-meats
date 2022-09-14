@@ -1,11 +1,11 @@
 import { AxiosResponse } from "axios";
 import React, { ReactNode, useEffect, useState } from "react";
-import { getFewRecipes } from "../../data/GetRecipes";
 import SearchForm from "../form/SearchForm";
 import RecipesList from "../list/RecipesList";
 import "./main_content.css";
 
 const MainContent = () => {
+  // console.log("render");
   return (
     <div className="container">
       <h2 className="main_title">
@@ -15,6 +15,7 @@ const MainContent = () => {
       <div>
         <SearchForm></SearchForm>
       </div>
+
 
       <RecipesList></RecipesList>
 
