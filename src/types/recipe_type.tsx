@@ -18,3 +18,9 @@ export interface Recipe {
 export interface RecipeData {
   recipes: Recipe[];
 }
+
+export interface RecipeCardProps {
+  title: string;
+  imageUrl: string;
+  rate: number;
+}
