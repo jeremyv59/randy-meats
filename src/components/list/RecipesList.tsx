@@ -31,6 +31,7 @@ const RecipesList: React.FC = () => {
         </div>
       ) : (
         recipesData.recipes.map((recipe: Recipe, index: number) => {
+          console.log("recipe map", recipe);
           return <p key={index}>{recipe.name}</p>;
         })
       )}
