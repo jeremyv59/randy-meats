@@ -20,6 +20,7 @@ export interface RecipeData {
 }
 
 export interface RecipeCardProps {
+  key: number;
   title: string;
   imageUrl: string;
   rate: number;
