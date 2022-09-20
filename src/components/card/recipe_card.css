@@ -1,3 +1,7 @@
+.card_style {
+  max-width: 100%;
+}
+
 .food_image {
-  max-width: 275px;
+  max-width: 100%;
 }
