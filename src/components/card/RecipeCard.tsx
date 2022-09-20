@@ -8,9 +8,9 @@ const { Meta } = Card;
 const RecipeCard: React.FC<RecipeCardProps> = (props) => {
   return (
     <Card
-      style={{ maxWidth: 300 }}
+      style={{ maxWidth: 325 }}
       key={props.key}
-      cover={<img alt="food" src={props.imageUrl}></img>}
+      cover={<img alt="food" className="food_image" src={props.imageUrl}></img>}
     >
       <Meta title={props.title}></Meta>
       <p>{props.rate}</p>

@@ -31,17 +31,19 @@ const RecipesList: React.FC = () => {
           <Spin tip="Chargement..." size="large"></Spin>
         </div>
       ) : (
-        recipesData.recipes.map((recipe: Recipe, index: number) => {
-          console.log("recipe map", recipe);
-          return (
-            <RecipeCard
-              key={index}
-              title={recipe.name}
-              imageUrl={recipe.images[3]}
-              rate={recipe.rate}
-            ></RecipeCard>
-          );
-        })
+        <div className="container_recipes_list">
+          {recipesData.recipes.map((recipe: Recipe, index: number) => {
+            console.log("recipe map", recipe);
+            return (
+              <RecipeCard
+                key={index}
+                title={recipe.name}
+                imageUrl={recipe.images[3]}
+                rate={recipe.rate}
+              ></RecipeCard>
+            );
+          })}
+        </div>
       )}
     </React.Fragment>
   );
