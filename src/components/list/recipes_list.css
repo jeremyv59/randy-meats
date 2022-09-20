@@ -1,0 +1,12 @@
+.spinner_container {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.ant-spin-dot-item {
+  background-color: var(--color-primary);
+}
+
+.ant-spin-text {
+  color: var(--color-primary);
+}

@@ -1,6 +1,8 @@
 import axios, { AxiosResponse } from "axios";
 import React, { useCallback, useEffect, useState } from "react";
 import { Recipe, RecipeData } from "../../types/recipe_type";
+import { Spin } from "antd";
+import "antd/lib/spin/style/index.css";
 import "./recipes_list.css";
 
 const RecipesList: React.FC = () => {
@@ -24,9 +26,11 @@ const RecipesList: React.FC = () => {
   return (
     <React.Fragment>
       {!recipesData ? (
-        <p>Loading...</p>
+        <div className="spinner_container">
+          <Spin tip="Chargement..." size="large"></Spin>
+        </div>
       ) : (
-        recipesData.recipes.map((recipe: any, index: number) => {
+        recipesData.recipes.map((recipe: Recipe, index: number) => {
           return <p key={index}>{recipe.name}</p>;
         })
       )}
