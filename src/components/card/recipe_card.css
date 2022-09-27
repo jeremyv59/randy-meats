@@ -1,7 +1,15 @@
 .card_style {
-  max-width: 100%;
+  width: 100%;
+  border-radius: 25px;
+  background-color: var(--color-primary);
 }
 
 .food_image {
+  border-top-left-radius: 25px;  
+  border-top-right-radius: 25px;  
   max-width: 100%;
+}
+
+.content_container {
+  padding: 0rem 1rem;
 }

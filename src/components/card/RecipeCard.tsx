@@ -11,13 +11,14 @@ const RecipeCard: React.FC<RecipeCardProps> = memo(
 
     return (
       <Card
-        //   style={{ maxWidth: 325 }}
         className="card_style"
         key={id}
         cover={<img alt="food" className="food_image" src={imageUrl}></img>}
       >
-        <Meta title={title}></Meta>
-        <p>{rate}</p>
+        <div className="content_container">
+          <p className="title_style">{title}</p>
+          <p className="rate_style">{rate}</p>
+        </div>
       </Card>
     );
   }
