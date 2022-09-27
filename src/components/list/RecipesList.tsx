@@ -9,6 +9,8 @@ import RecipeCard from "../card/RecipeCard";
 const RecipesList: React.FC = () => {
   const [recipesData, setRecipesData] = useState<RecipeData | null>(null);
 
+  const randomImage = require("../../assets/no_image.jpg");
+
   const fetchData = useCallback(async () => {
     await axios
       .get<RecipeData>("http://localhost:5000/api")
@@ -19,10 +21,14 @@ const RecipesList: React.FC = () => {
 
   // the useEffect is only there to call `fetchData` at the right time
   useEffect(() => {
+    console.log("UE fetch");
+
     fetchData()
       // make sure to catch any error
       .catch(console.error);
   }, [fetchData]);
+
+  console.log("render list");
 
   return (
     <React.Fragment>
@@ -36,9 +42,9 @@ const RecipesList: React.FC = () => {
             console.log("recipe map", recipe);
             return (
               <RecipeCard
-                key={index}
+                id={index}
                 title={recipe.name}
-                imageUrl={recipe.images[3]}
+                imageUrl={recipe.images[3] ? recipe.images[3] : randomImage}
                 rate={recipe.rate}
               ></RecipeCard>
             );
