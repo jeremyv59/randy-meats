@@ -23,3 +23,9 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .container_recipes_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
